@@ -31,7 +31,6 @@ var insert = function(intervals, newInterval) {
 };
 
 var merge = function(intervals) {
-    //intervals.sort(function(a,b){ return a[0] - b[0]});
     var op = [];
     for(var i=0;i<intervals.length-1;i++){
         if(intervals[i][1]>=intervals[i+1][0]){
