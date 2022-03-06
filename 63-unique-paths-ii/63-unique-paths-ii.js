@@ -17,6 +17,5 @@ var uniquePathsWithObstacles = function(grid) {
     for(let i=0;i< grid.length;i++) {
         dp[i] = new Array(grid[0].length);
     }
-    
     return dfs(grid, 0, 0, dp);
 };
