@@ -5,9 +5,6 @@ var BSTIterator = function(root) {
 };
 
 BSTIterator.prototype.next = function() {
-    if(!this.inorder.length){
-        return -1;
-    }
     return this.inorder.shift();
 };
 
