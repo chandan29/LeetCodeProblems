@@ -4,8 +4,8 @@ class HitCounter {
         this.n = n;
         this.hits = new Array(this.n).fill(0);
         this.times = new Array(this.n).fill(0);
-        this.hit = this.hit.bind(this);
-        this.getHits = this.getHits.bind(this);
+        //this.hit = this.hit.bind(this);
+        //this.getHits = this.getHits.bind(this);
     }
     
     
