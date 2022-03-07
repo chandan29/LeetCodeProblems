@@ -41,5 +41,7 @@ function dfs(a, z, obj, visited = new Set()){
         }
     }
     
+    visited.delete(a);
+    
     return -1.0
 }
