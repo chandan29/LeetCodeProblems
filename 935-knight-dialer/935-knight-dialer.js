@@ -24,21 +24,9 @@ var knightDialer = function(n) {
         }
     }
 	
-	// if n > 2, we calculate the total numbers that can be formed from each digit when we start from it
-	// `total` will be summation of all the numbers which we will return
+	
     for(let i = 3; i <= n; ++i) {
         for(let num = 0; num <= 9; ++num) {
-		
-			/* the number of digits that can be formed starting with `num` equals the sum of the number of digits that can be formed by the digits which are reachable from `num`
-			for instance, for n = 3 and num = 1, `16` and `18` are two 2 digit number. 
-			in order to get the 3 digit numbers starting with `1`, we need to check the digits reachable from 6 and 8
-			for `6` we check all the 2 digit numbers - 3 (0,1,7), and for `8` = 2 (1,3)
-			that is,
-			dp[1][3] = dp[6][2] + dp[8][2]
-			dp[6][2] = 3
-			dp[8][2] = 2
-			=> dp[1][3] = 5 (phone numbers - 160, 161, 167, 181, 183)
-			*/
             map[num].forEach(d => dp[num][i] = (dp[num][i] + dp[d][i - 1]) % mod);
             if(i === n) {
                 total = (total + dp[num][i]) % mod;
