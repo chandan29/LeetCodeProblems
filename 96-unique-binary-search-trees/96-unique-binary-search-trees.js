@@ -3,19 +3,13 @@
  * @return {number}
  */
 var numTrees = function(n) {
-    let dp = [];
-    for(let i=0;i<=n;i++){
-        dp[i] = 0;
+    let dp = new Array(n + 1).fill(1);
+  for (let i = 2; i <= n; i++) {
+    let count = 0;
+    for (let j = 1; j <= i; j++) {
+      count += dp[j - 1] * dp[i - j];
     }
-    
-    dp[0] = 1;
-    dp[1] = 1;
-    
-    for(let i=2;i<n+1;i++){
-        for(let j=1;j<=i;j++){
-            dp[i] += dp[j-1] * dp[i-j];
-        }
-    }
-    
-    return dp[n];
+    dp[i] = count;
+  }
+  return dp[n];
 };
