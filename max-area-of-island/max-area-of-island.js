@@ -19,13 +19,7 @@ var maxAreaOfIsland = function(grid) {
 };
 
 var helper = function(grid,row,col){
-    if(row>grid.length -1 || row<0){
-        return 0;
-    }
-    if(col>grid[0].length-1 || col<0){
-        return 0;
-    }
-    if(grid[row][col]=='0'){
+    if(row>grid.length -1 || row<0 || col>grid[0].length-1 || col<0 || grid[row][col]=='0'){
         return 0;
     }
     grid[row][col] = '0';
