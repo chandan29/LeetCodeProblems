@@ -5,8 +5,8 @@
  */
 var minCost = function(colors, neededTime) {
     let time = 0;
-    
-    for(let i = colors.length-1;i>=0;i--){
+    let len = colors.length; 
+    for(let i = len-1;i>=0;i--){
         let curr = colors[i];
         let currVal = neededTime[i];
         let j = i-1;
