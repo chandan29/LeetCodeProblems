@@ -30,9 +30,9 @@ var findMinHeightTrees = function(n, edges) {
         n -= leaves.length;
         let newLeaves = [];
         
-        for (let i of leaves) {
-            let j = Array.from(adj[i])[0];
-            adj[j].delete(i);
+        for (let i=0;i<leaves.length;i++) {
+            let j = Array.from(adj[leaves[i]])[0];
+            adj[j].delete(leaves[i]);
             
             if (adj[j].size == 1) {
                 newLeaves.push(j);
