@@ -83,15 +83,17 @@ var numberToWords = function(n) {
         }
 
         if(num >= 20 && num < 100) {
-            multiplicationFactor = num - num % 10;
-            stringNumber = `${stringNumber} ${numToWordsDictionary[multiplicationFactor]}`;
+            remainder = Math.floor(num/10);
+            remainder*=10;
+            console.log(remainder);
+            stringNumber = `${stringNumber} ${numToWordsDictionary[remainder]}`;
             num = num % 10;
             continue;
         }
 
         if(num < 20) {
-            multiplicationFactor = num - num % 1;
-            stringNumber = `${stringNumber} ${numToWordsDictionary[multiplicationFactor]}`;
+            remainder = num;
+            stringNumber = `${stringNumber} ${numToWordsDictionary[remainder]}`;
             num = num % 1;
             continue;
         }
