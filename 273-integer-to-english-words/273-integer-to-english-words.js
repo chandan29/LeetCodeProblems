@@ -39,7 +39,6 @@ var numberToWords = function(n) {
     
     let num = n;
     let stringNumber = "";
-    let multiplicationFactor = 0;
     let remainder = 0;
     
     if(num === 0) {
