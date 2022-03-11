@@ -4,8 +4,10 @@
  * @return {string}
  */
 var kthLargestNumber = function(nums, k) {
-    let a = nums.map((x) => BigInt(x));
-  a.sort((a, b) => (a >= b ? -1 : 1));
-
-  return `${a[k - 1]}`;
+    nums.sort((a,b)=>{
+        return BigInt(a) >  BigInt(b) ? 1 : -1;
+    });
+    
+    let ind = nums.length - k;
+    return nums[ind];
 };
