@@ -19,6 +19,6 @@ var checkPossibility = function(nums) {
         return true;
     }
     else{
-        return nums[badIndex-1] <= nums[badIndex+1] || nums[badIndex]<=nums[badIndex+2]
+        return nums[badIndex-1] <= nums[badIndex+1] || nums[badIndex]<=nums[badIndex+2];
     }
 };
