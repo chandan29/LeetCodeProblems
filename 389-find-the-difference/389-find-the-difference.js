@@ -4,17 +4,8 @@
  * @return {character}
  */
 var findTheDifference = function(s, t) {
-    s = s.split('').sort().join('');
-    t = t.split('').sort().join('');
     
-    for(let i=0;i<s.length;i++){
-        if(s[i]!==t[i]){
-            return t[i];
-        }
-    }
-    
-    return t[t.length-1];
-    /*let map = {};
+    let map = {};
     for(let i=0;i<s.length;i++){
         if(!map[s[i]]){
             map[s[i]] = 1;
@@ -35,5 +26,5 @@ var findTheDifference = function(s, t) {
         else{
             map[t[i]]--;
         }
-    }*/
+    }
 };
