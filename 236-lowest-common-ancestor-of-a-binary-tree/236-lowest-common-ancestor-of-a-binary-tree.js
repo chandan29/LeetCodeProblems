@@ -17,7 +17,7 @@ var lowestCommonAncestor = function(root, p, q) {
     return lca;
     function dfs(root) {
         if (!root) {
-            return false;
+            return 0;
         }
         let left = dfs(root.left);
         let right = dfs(root.right);
