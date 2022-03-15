@@ -3,27 +3,18 @@
  * @return {number[]}
  */
 var nextGreaterElements = function(nums) {
-    var op = [];
+    const n = nums.length,
+          result = new Array(n),
+          stack = [];
     
-    for(var i=0;i<nums.length;i++){
-        var j = i + 1;
-        
-        while(true){
-            if(j===nums.length){
-                j = 0;
-                continue;
-            }
-            if(j===i){
-                op.push(-1);
-                break;
-            }
-            if(nums[j]>nums[i]){
-                op.push(nums[j]);
-                break;
-            }
-            j++;
+    for(let i = 2 * n - 1; i >= 0; --i) {
+        const num = nums[i % n];
+        while(stack.length && stack[stack.length - 1] <= num) {
+            stack.pop();
         }
+        const nextGreater = stack.length ? stack[stack.length - 1] : -1;
+        result[i % n] = nextGreater;
+        stack.push(num);
     }
-    
-    return op;
+    return result;
 };
