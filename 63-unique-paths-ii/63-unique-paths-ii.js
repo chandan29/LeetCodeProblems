@@ -13,7 +13,7 @@ const dfs = (grid, row, col, dp) => {
     return dp[row][col];
 }
 var uniquePathsWithObstacles = function(grid) {
-    const dp = new Array(grid.length);
+    const dp = [];
     for(let i=0;i< grid.length;i++) {
         dp[i] = new Array(grid[0].length);
     }
