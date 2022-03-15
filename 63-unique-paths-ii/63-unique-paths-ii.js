@@ -3,10 +3,10 @@ const dfs = (grid, row, col, dp) => {
         return 0;
     }
     if (row==grid.length-1 && col == grid[0].length-1) {
-        return 1;
+        return 1; //only one path possible if row === row.len or col === col.len
     }
     if (dp[row][col] != null) {
-        return dp[row][col]
+        return dp[row][col];
     }
     dp[row][col] = dfs(grid, row+1, col, dp)+ dfs(grid, row, col+1, dp);
     
