@@ -23,6 +23,8 @@ MedianFinder.prototype.addNum = function(num) {
         }
     this.ary.splice(low, 0, num);
     
+    // O(n)
+    
 };
 
 MedianFinder.prototype.findMedian = function() {
@@ -37,5 +39,7 @@ MedianFinder.prototype.findMedian = function() {
             var mid = Math.floor(this.ary.length/2);
             return (this.ary[mid]);
         }
+    
+    //O(1)
     
 };
