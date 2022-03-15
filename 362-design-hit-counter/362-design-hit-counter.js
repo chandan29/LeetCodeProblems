@@ -7,7 +7,7 @@ class HitCounter {
     }
     
     hit(timestamp){
-        const index = timestamp % this.n;
+        const index = timestamp % this.n; //timestamp/300;
         if (this.times[index] !== timestamp) {
             this.times[index] = timestamp;
             this.hits[index] = 1;
