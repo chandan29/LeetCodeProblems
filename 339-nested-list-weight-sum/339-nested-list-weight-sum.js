@@ -1,6 +1,6 @@
 var depthSum = function(nestedList) {
     var sum = 0;
-    return helper(nestedList,1,0);
+    return helper(nestedList,1);
     
     
     function helper(list,d){
