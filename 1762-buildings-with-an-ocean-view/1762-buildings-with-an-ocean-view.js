@@ -3,19 +3,14 @@
  * @return {number[]}
  */
 var findBuildings = function(heights) {
-    let maxTillNow = -1;
-    let op = [];
-    if(!heights.length){
-        return op;
-    }
-    op.unshift(heights.length-1);
-    maxTillNow = heights[heights.length-1];
-    for(let i = heights.length-2; i>=0; i--){
+    var maxTillNow = 0;
+    var op = [];
+    for(var i=heights.length-1;i>=0;i--){
         if(heights[i]>maxTillNow){
-            op.unshift(i);
+            op.push(i);
             maxTillNow = heights[i];
         }
     }
     
-    return op;
+    return op.reverse();
 };
