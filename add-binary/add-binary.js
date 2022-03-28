@@ -13,7 +13,12 @@ var addBinary = function(a, b) {
         let sum = tmp1 + tmp2 + add;
 
         if(sum > 1){
-            sum %= 2;
+            if(sum===2){
+                sum = 0;
+            }
+            else{
+                sum = 1;
+            }
             add = 1;
         }else{
             add = 0;
