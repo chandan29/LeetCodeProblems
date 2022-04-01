@@ -15,7 +15,7 @@ var rightSideView = function(root) {
     if(!root){
         return op;
     }
-    //var arr = [[]];
+    
     var queue = [root,'s'];
     
     let prev = null;
@@ -29,7 +29,6 @@ var rightSideView = function(root) {
             prev = null;
             continue;
         }
-        //arr[arr.length-1].push(curr.val);
         if(curr.left){
             queue.push(curr.left);
         }
@@ -41,9 +40,6 @@ var rightSideView = function(root) {
     if(prev){
         op.push(prev.val);
     }
-    /*for(var i=0;i<arr.length;i++){
-        op.push(arr[i][arr[i].length-1]);
-    }*/
     
     return op;
 };
