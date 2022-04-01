@@ -19,7 +19,6 @@ var merge = function(nums1, m, nums2, n) {
             m--;
         }
         ind--;
-        console.log(nums1);
     }
     while(n>=0){
         nums1[ind] = nums2[n];
